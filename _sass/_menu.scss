@@ -1,0 +1,50 @@
+nav {
+    background-color: #333; /* Dark background for the nav */
+    // padding: 0.5rem 1rem;
+}
+
+nav ul {
+    list-style-type: none; /* Remove default bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Space items evenly */
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 0.75rem 1rem; /* Add padding for a larger clickable area */
+    display: block;
+    font-size: 1.1rem; /* Slightly larger font */
+    font-weight: 500; /* Medium weight font */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Lighter background on hover */
+    color: #ddd; /* Light gray text color on hover */
+}
+
+nav ul li a.active {
+    background-color: #555; /* Same as hover for the active link */
+    color: #fff; /* Keep text white */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically on smaller screens */
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 0.5rem;
+    }
+}

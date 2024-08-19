@@ -1,6 +1,11 @@
 <nav>
-    <div class="ui inverted menu custom-menu">
-        <a class="item {% if page.url == '/home' or page.url == '/' %}active{% endif %}" href="{{ '/home' | relative_url }}">Home</a>
-        <a class="item {% if page.url contains '/blogs' %}active{% endif %}" href="{{ '/blogs' | relative_url }}">Blog</a>
-    </div>
+    <ul>
+        {% for link in site.data.navigation %}
+        <li>
+            <a href="{{ link.url | relative_url }}" {% if page.url == link.url %}class="active"{% endif %}>
+                {{ link.title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
 </nav>
