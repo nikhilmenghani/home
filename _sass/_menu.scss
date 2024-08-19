@@ -1,20 +1,38 @@
+/* Base Styles */
 nav {
     background-color: #333; /* Dark background for the nav */
-    // padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
 }
 
-nav ul {
-    list-style-type: none; /* Remove default bullet points */
+.nav-container {
+    max-width: 1200px; /* Limit the width of the nav container */
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    justify-content: space-between; /* Left and right menus are spaced apart */
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Left-aligned Menu */
+nav ul.left-menu {
+    display: flex;
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: flex-start; /* Space items evenly */
-    align-items: center;
 }
 
+/* Right-aligned Menu */
+nav ul.right-menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu Items */
 nav ul li {
-    display: inline;
-    margin-right: 1rem;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -28,23 +46,31 @@ nav ul li a {
     border-radius: 4px; /* Slightly rounded corners */
 }
 
+/* Hover Effects */
 nav ul li a:hover {
     background-color: #555; /* Lighter background on hover */
     color: #ddd; /* Light gray text color on hover */
 }
 
+/* Active/Current Page */
 nav ul li a.active {
     background-color: #555; /* Same as hover for the active link */
     color: #fff; /* Keep text white */
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack menu items vertically on smaller screens */
-        text-align: center;
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul.left-menu, nav ul.right-menu {
+        justify-content: center;
+        flex-direction: column;
     }
 
     nav ul li {
-        margin-bottom: 0.5rem;
+        margin: 10px 0;
     }
 }

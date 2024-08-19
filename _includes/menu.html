@@ -1,11 +1,29 @@
 <nav>
-    <ul>
-        {% for link in site.data.navigation %}
-        <li>
-            <a href="{{ link.url | relative_url }}" {% if page.url == link.url %}class="active"{% endif %}>
-                {{ link.title }}
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="nav-container">
+        <!-- Left-aligned menu -->
+        <ul class="left-menu">
+            {% for link in site.data.navigation %}
+                {% if forloop.index <= 2 %} <!-- Adjust this condition based on how many items you want on the left -->
+                    <li>
+                        <a href="{{ link.url | relative_url }}" {% if page.url == link.url %}class="active"{% endif %}>
+                            {{ link.title }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <!-- Right-aligned menu -->
+        <ul class="right-menu">
+            {% for link in site.data.navigation %}
+                {% if forloop.index > 2 %} <!-- Adjust this condition based on how many items you want on the right -->
+                    <li>
+                        <a href="{{ link.url | relative_url }}" {% if page.url == link.url %}class="active"{% endif %}>
+                            {{ link.title }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
 </nav>
