@@ -3,7 +3,7 @@
         <!-- Left-aligned menu -->
         <ul class="left-menu">
             {% for link in site.data.navigation %}
-                {% if forloop.index <= 2 %} <!-- Adjust this condition based on how many items you want on the left -->
+                {% if forloop.index <= 2 %}
                     <li>
                         <a href="{{ link.url | relative_url }}" {% if page.url == link.url %}class="active"{% endif %}>
                             {{ link.title }}
@@ -16,7 +16,7 @@
         <!-- Right-aligned menu -->
         <ul class="right-menu">
             {% for link in site.data.navigation %}
-                {% if forloop.index > 2 %} <!-- Adjust this condition based on how many items you want on the right -->
+                {% if forloop.index > 2 %}
                     <li>
                         <a href="{{ link.url | relative_url }}" {% if page.url == link.url %}class="active"{% endif %}>
                             {{ link.title }}
