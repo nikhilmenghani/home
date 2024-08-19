@@ -1,6 +1,6 @@
 /* Base Styles */
 nav {
-    background-color: #333; /* Dark background for the nav */
+    background-color: var(--background-color); /* Dark background for the nav */
     padding: 0.5rem 1rem;
 }
 
@@ -36,7 +36,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff; /* White text color */
+    color: var(--text-color); /* White text color */
     text-decoration: none; /* Remove underline */
     padding: 0.75rem 1rem; /* Add padding for a larger clickable area */
     display: block;
@@ -48,14 +48,14 @@ nav ul li a {
 
 /* Hover Effects */
 nav ul li a:hover {
-    background-color: #555; /* Lighter background on hover */
+    background-color: var(--background-color-hover); /* Lighter background on hover */
     color: #ddd; /* Light gray text color on hover */
 }
 
 /* Active/Current Page */
 nav ul li a.active {
-    background-color: #555; /* Same as hover for the active link */
-    color: #fff; /* Keep text white */
+    background-color: var(--background-color-hover); /* Same as hover for the active link */
+    color: var(--text-color); /* Keep text white */
 }
 
 /* Responsive Design */

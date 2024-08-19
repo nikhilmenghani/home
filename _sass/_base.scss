@@ -1,3 +1,17 @@
+:root {
+    --background-color: #161515;
+    --background-color-hover: #363636;
+    --text-color: #fff;
+    --header-padding: 0.0rem;
+    --footer-padding: 1rem;
+}
+
+:root.light-theme {
+    --background-color: #f0f0f0;
+    --text-color: #333;
+}
+
+
 html, body {
     height: 100%;
     margin: 0;
@@ -6,9 +20,9 @@ html, body {
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 0.5rem;
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: var(--header-padding);
     flex-shrink: 0;
     width: 100%;
 }
@@ -16,8 +30,8 @@ header {
 footer {
     flex-shrink: 0;
     width: 100%;
-    background-color: #333; /* Example background color */
-    color: #fff; /* Example text color */
-    padding: 1rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: var(--footer-padding);
     text-align: center;
 }
