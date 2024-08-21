@@ -21,7 +21,7 @@ Supports Android 14(U), 13 (T) with regular updates and Android 12L (SL), 12 (S)
         <div class="cards-container">
             <div class="ui equal width grid">
                 <div class="equal width row">
-                    {% for card in site.data.cards.cards %}
+                    {% for card in site.data.gappsvariants.cards %}
                     <div class="column">
                         {% include card.html
                             title=card.title
