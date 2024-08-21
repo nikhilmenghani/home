@@ -22,14 +22,14 @@
     
     <!-- Main Content -->
     <main class="page-content">
-        <div class="ui container">
-            {{ content }}
-        </div>
+        {{ content }}
     </main>
 
     <!-- Footer -->
     {% include footer.html %}
-    <script src="{{ " /assets/js/app.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/app.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/accordion.js" | relative_url }}"></script>
+
 </body>
 
 </html>

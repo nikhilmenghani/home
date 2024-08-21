@@ -1,0 +1,52 @@
+.card {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: none;
+    padding-top: 10px;
+}
+
+.accordion-toggle.active + .accordion-content {
+    display: block;
+}
+
+.card-content ul, .accordion-content ul {
+    padding-left: 20px;
+}
+
+.card-content li, .accordion-content li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.download-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.download-link:hover {
+    background-color: #0056b3;
+}

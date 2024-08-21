@@ -1,0 +1,26 @@
+<div class="card">
+    {% if include.is_accordion %}
+    <div class="card-header accordion-toggle">
+        <h3>{{ include.title }}</h3>
+    </div>
+    <div class="accordion-content">
+        <ul>
+            {% for item in include.content %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <div class="card-header">
+        <h3>{{ include.title }}</h3>
+    </div>
+    <div class="card-content">
+        <ul>
+            {% for item in include.content %}
+            <li>{{ item }}</li>
+            {% endfor %}
+            <a href="{{ include.download_link }}" class="download-link">Download</a>
+        </ul>
+    </div>
+    {% endif %}
+</div>

@@ -1,0 +1,13 @@
+cards:
+  - title: "Card Title 1"
+    is_accordion: true
+    content: 
+      - "First bullet point"
+      - "Second bullet point"
+      - "Third bullet point"
+    download_link: "https://example.com/download1"
+  - title: "Card Title 2"
+    is_accordion: false
+    content: 
+      - "Only one point for this card"
+    download_link: "https://example.com/download2"
