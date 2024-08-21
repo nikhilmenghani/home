@@ -19,14 +19,20 @@ Supports Android 14(U), 13 (T) with regular updates and Android 12L (SL), 12 (S)
         <h1>NikGapps Variants</h1>
 
         <div class="cards-container">
-            {% for card in site.data.cards.cards %}
-            {% include card.html
-                title=card.title
-                content=card.content
-                download_link=card.download_link
-                is_accordion=card.is_accordion
-            %}
-            {% endfor %}
+            <div class="ui equal width grid">
+                <div class="equal width row">
+                    {% for card in site.data.cards.cards %}
+                    <div class="column">
+                        {% include card.html
+                            title=card.title
+                            content=card.content
+                            download_link=card.download_link
+                            is_accordion=card.is_accordion
+                        %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
