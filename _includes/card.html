@@ -1,26 +1,30 @@
 <div class="card">
-    {% if include.is_accordion %}
-    <div class="card-header accordion-toggle">
+    <div class="card-header {% if include.is_accordion %}accordion-toggle{% endif %}">
         <h3>{{ include.title }}</h3>
+        {% if include.is_accordion %}
+        <i class="accordion-arrow"></i>
+        {% endif %}
     </div>
+    {% if include.is_accordion %}
     <div class="accordion-content">
         <ul>
             {% for item in include.content %}
             <li>{{ item }}</li>
             {% endfor %}
         </ul>
+        <hr class="content-divider">
+        <a href="{{ include.download_link }}" class="download-link">Download</a>
+        <div class="spacer"></div>
     </div>
     {% else %}
-    <div class="card-header">
-        <h3>{{ include.title }}</h3>
-    </div>
     <div class="card-content">
         <ul>
             {% for item in include.content %}
             <li>{{ item }}</li>
             {% endfor %}
-            <a href="{{ include.download_link }}" class="download-link">Download</a>
         </ul>
+        <hr class="content-divider">
+        <a href="{{ include.download_link }}" class="download-link">Download</a>
     </div>
     {% endif %}
 </div>

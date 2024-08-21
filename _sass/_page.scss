@@ -36,3 +36,9 @@
     align-items: center;
     background-color: var(--tinted-background-color);
 }
+
+.spacer {
+    height: 10px;
+    visibility: hidden;
+    pointer-events: none;
+}

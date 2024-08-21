@@ -9,20 +9,44 @@
     position: relative;
 }
 
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
 .card-header h3 {
     margin: 0;
     font-size: 1.5em;
     color: #333;
-    cursor: pointer;
+}
+
+.accordion-arrow {
+    width: 10px;
+    height: 10px;
+    border: solid #333;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.accordion-toggle.active .accordion-arrow {
+    transform: rotate(-135deg); /* Rotate the arrow when active */
 }
 
 .accordion-content {
-    display: none;
-    padding-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding-top: 0;
 }
 
 .accordion-toggle.active + .accordion-content {
-    display: block;
+    padding-top: 10px;
+    max-height: none; /* This will allow the accordion to expand fully */
 }
 
 .card-content ul, .accordion-content ul {
@@ -34,17 +58,31 @@
     color: #555;
 }
 
+/* Ensure the divider is visible and properly placed */
+.content-divider {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0;
+    width: 100%; /* Ensure it spans the full width */
+}
+
+/* Aligning the download button to the right */
+.accordion-content, .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ensures the list items are aligned to the left */
+}
+
 .download-link {
-    display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px 15px;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+    transition: background-color 0.3s ease;
+    align-self: flex-end; /* Aligns the button to the right */
 }
 
 .download-link:hover {
