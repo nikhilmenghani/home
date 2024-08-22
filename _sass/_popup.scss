@@ -1,0 +1,53 @@
+/* Popup overlay to darken the background */
+.custom-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Hidden state for the popup overlay */
+.hidden {
+    display: none;
+}
+
+/* Popup container */
+.custom-popup {
+    background-color: white;
+    border-radius: 8px;
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Popup header */
+.custom-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.custom-popup-header h3 {
+    margin: 0;
+}
+
+/* Close button */
+.custom-popup-close {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Popup content */
+.custom-popup-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
