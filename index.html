@@ -12,7 +12,7 @@ title: Home
             <h4>A Custom Google Apps Package that Suits Everyone Needs!
                 Supports Android 14(U), 13 (T) with regular updates and Android 12L (SL), 12 (S), 11 (R), 10 (Q) on need
                 basis</h4>
-            <div class="ui button">Show flowing popup</div>
+            <!-- <div class="ui button">Show flowing popup</div>
             <div class="ui flowing popup top left transition hidden special-popup">
                 <div class="ui three column divided center aligned grid">
                     <div class="column">
@@ -52,20 +52,41 @@ title: Home
                         <a class="ui button" target="_blank" href="https://www.google.com">Google.com</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Include the popup -->
             {% include popup.html %}
 
             <!-- Example buttons to trigger the popup -->
-            <button class="custom-popup-button" data-title="Popup Title 1"
+            <button class="ui button custom-popup-button" data-title="Popup Title 1"
                 data-content="<p>This is the content of the first popup. It could include <strong>bold text</strong>, <a href='#'>links</a>, or any other HTML elements.</p>">Show
                 Popup 1</button>
 
-            <button class="custom-popup-button" data-title="Popup Title 2"
+            <button class="ui button custom-popup-button" data-title="Popup Title 2"
                 data-content="<ul><li>List item 1</li><li>List item 2</li><li>List item 3</li></ul>">Show Popup
                 2</button>
 
+            <button class="custom-popup-trigger" data-title="Basic Plan"
+                data-content="<p><b>2</b> projects, $10 a month</p>">
+                Show Basic Plan 1
+            </button>
+
+
+            {% for popup in site.data.popups.popups %}
+            <!-- Button to trigger the popup -->
+            <button class="ui button custom-popup-trigger" data-title="{{ popup.title }}"
+                data-content="{{ popup.content }}">
+                {{ popup.button_text }}
+            </button>
+            {% endfor %}
+
+            <!-- Popup structure (shared by all triggers) -->
+            <div class="ui flowing popup top left transition hidden special-popup" id="semantic-dynamic-popup">
+                <div class="ui header" id="dynamic-popup-title"></div>
+                <div id="dynamic-popup-content">
+                    <!-- Dynamic content will be injected here -->
+                </div>
+            </div>
 
             <div class="ui huge primary button">Download <i class="right arrow icon"></i></div>
         </div>

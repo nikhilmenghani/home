@@ -1,0 +1,22 @@
+popups:
+  - button_text: "Show flowing popup 1"
+    plans:
+      - title: "Android 10"
+        is_accordion: true
+        content:
+          - "Stable release"
+          - "Security patches included"
+        download_link: "https://example.com/downloads/android10-stable"
+  - button_text: "Show flowing popup 2"
+    plans:
+      - title: "Android 12"
+        is_accordion: true
+        content:
+          - "Stable release"
+          - "Latest features"
+        download_link: "https://example.com/downloads/android12-stable"
+      - title: "Android 13"
+        is_accordion: false
+        content:
+          - "Nightly build"
+        download_link: "https://example.com/downloads/android13-nightly"

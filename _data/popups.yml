@@ -1,0 +1,10 @@
+popups:
+  - button_text: "Show Basic Plan"
+    title: "Basic Plan"
+    content: "<p><b>2</b> projects, $10 a month</p><a target='_blank' href='https://www.example.com'>Download Here</a>"
+  - button_text: "Show Business Plan"
+    title: "Business Plan"
+    content: "<p><b>5</b> projects, $20 a month</p><a href='https://www.example.com'>Download Here</a>"
+  - button_text: "Show Premium Plan"
+    title: "Premium Plan"
+    content: "<p><b>8</b> projects, $25 a month</p><a href='https://www.example.com'>Download Here</a>"
