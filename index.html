@@ -1,0 +1,81 @@
+---
+layout: home
+title: Home
+---
+
+<div class="home">
+    <div class="first__container">
+        <div class="ui text container">
+            <h1 class="ui header">
+                NikGapps
+            </h1>
+            <h4>A Custom Google Apps Package that Suits Everyone Needs!
+                Supports Android 14(U), 13 (T) with regular updates and Android 12L (SL), 12 (S), 11 (R), 10 (Q) on need
+                basis</h4>
+                <div class="ui button">Show flowing popup</div>
+                <div class="ui flowing popup top left transition hidden">
+                    <div class="ui three column divided center aligned grid">
+                        <div class="column">
+                            <h4 class="ui header">Basic Plan</h4>
+                            <p><b>2</b> projects, $10 a month</p>
+                            <a class="ui button" target="_blank" href="https://www.google.com">Google.com</a>
+                        </div>
+                        <div class="column">
+                            <h4 class="ui header">Business Plan</h4>
+                            <p><b>5</b> projects, $20 a month</p>
+                            <a class="ui button" target="_blank" href="https://www.google.com">Google.com</a>
+                        </div>
+                        <div class="column">
+                            <h4 class="ui header">Premium Plan</h4>
+                            <p><b>8</b> projects, $25 a month</p>
+                            <a class="ui button" target="_blank" href="https://www.google.com">Google.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui button">Show flowing popup 2</div>
+                <div class="ui flowing popup top left transition hidden">
+                    <div class="ui three column divided center aligned grid">
+                        <div class="column">
+                            <h4 class="ui header">Basic Plan</h4>
+                            <p><b>2</b> projects, $10 a month</p>
+                            <a class="ui button" target="_blank" href="https://www.google.com">Google.com</a>
+                        </div>
+                        <div class="column">
+                            <h4 class="ui header">Business Plan</h4>
+                            <p><b>5</b> projects, $20 a month</p>
+                            <a class="ui button" target="_blank" href="https://www.google.com">Google.com</a>
+                        </div>
+                        <div class="column">
+                            <h4 class="ui header">Premium Plan</h4>
+                            <p><b>8</b> projects, $25 a month</p>
+                            <a class="ui button" target="_blank" href="https://www.google.com">Google.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="ui huge primary button">Download <i class="right arrow icon"></i></div>
+        </div>
+    </div>
+    <div class="ui container">
+
+        <h1>NikGapps Variants</h1>
+
+        <div class="cards-container">
+            <div class="ui equal width grid">
+                <div class="equal width row">
+                    {% for card in site.data.gappsvariants.cards %}
+                    <div class="column">
+                        {% include card.html
+                        title=card.title
+                        content=card.content
+                        download_link=card.download_link
+                        is_accordion=card.is_accordion
+                        %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
