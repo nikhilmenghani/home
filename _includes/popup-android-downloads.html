@@ -1,0 +1,12 @@
+{% for popup in site.data.popups.popups %}
+  {% for version in popup.android_versions %} 
+  <div class="column">
+    <h3>Android {{ version.version }}</h3>
+    <ul>
+      {% for release in version.releases %}
+      <li><a href="{{ release.link }}{{ version.version }}" target="_blank">{{ release.type }} Release</a></li>
+      {% endfor %}
+    </ul>               
+  </div>
+  {% endfor %}
+{% endfor %}

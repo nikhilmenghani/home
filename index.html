@@ -12,7 +12,7 @@ title: Home
             <h4>A Custom Google Apps Package that Suits Everyone Needs!
                 Supports Android 14(U), 13 (T) with regular updates and Android 12L (SL), 12 (S), 11 (R), 10 (Q) on need
                 basis</h4>
-            
+
             <div class="spacer"></div>
 
             {% for popup in site.data.popups.popups %}
@@ -23,12 +23,60 @@ title: Home
 
             <!-- Popup structure specific to this button -->
             <div class="ui flowing popup top left transition hidden special-popup" id="popup-{{ popup.id }}">
-                <div class="ui header">{{ popup.title }}</div>
                 <div class="popup-content" id="content-{{ popup.id }}">
-                    <!-- Dynamic content will be loaded here -->
+                    {% include popup-android-downloads.html %}
                 </div>
             </div>
             {% endfor %}
+
+            {% assign version_count = site.data.popups.popups[0].android_versions | size %}
+            {% case version_count %}
+            {% when 1 %}
+            {% assign column_class = "one" %}
+            {% when 2 %}
+            {% assign column_class = "two" %}
+            {% when 3 %}
+            {% assign column_class = "three" %}
+            {% when 4 %}
+            {% assign column_class = "four" %}
+            {% when 5 %}
+            {% assign column_class = "five" %}
+            {% when 6 %}
+            {% assign column_class = "six" %}
+            {% when 7 %}
+            {% assign column_class = "seven" %}
+            {% when 8 %}
+            {% assign column_class = "eight" %}
+            {% when 9 %}
+            {% assign column_class = "nine" %}
+            {% when 10 %}
+            {% assign column_class = "ten" %}
+            {% when 11 %}
+            {% assign column_class = "eleven" %}
+            {% when 12 %}
+            {% assign column_class = "twelve" %}
+            {% else %}
+            {% assign column_class = "three" %}
+            {% endcase %}
+
+            <div class="ui button">Alternate Download Android Versions</div>
+            <div class="ui flowing popup top left transition hidden special-popup">
+                <div class="ui {{ column_class }} column divided center aligned grid">
+                    {% for popup in site.data.popups.popups %}
+                    {% for version in popup.android_versions %}
+                    <div class="column">
+                        <h4 class="ui header">Android {{ version.version }}</h4>
+                        <ul>
+                            {% for release in version.releases %}
+                            <li><a href="{{ release.link }}{{ version.version }}" target="_blank">{{ release.type }}
+                                Release</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
 
         </div>
     </div>
