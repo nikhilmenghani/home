@@ -7,8 +7,10 @@ $(document).ready(function() {
         variation: 'flowing'
     });
 
-    // Allow links inside the popup to function properly
+    // Handle the link click inside the popup
     $('.ui.flowing.popup a').on('click', function(event) {
-        event.stopPropagation(); // Prevent the popup from closing when the link is clicked
+        
+        // Close the popup after the link is clicked
+        $('.ui.button').first().popup('hide');
     });
 });
